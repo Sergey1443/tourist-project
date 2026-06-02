@@ -28,24 +28,33 @@ class RegisteredUserController extends Controller
      *
      * @throws ValidationException
      */
-    public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+   public function store(Request $request): RedirectResponse
+{
+    $request->validate([
+        'login' => ['required', 'string','min:8', 'max:255', 'unique:users'],
+        'name' => ['required', 'string', 'max:255'],
+        'middlename' => ['nullable', 'string', 'max:255'],
+        'lastname' => ['required', 'string', 'max:255'],
+        'phone' => ['required', 'string', 'regex:/^8\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}$/'],
+        'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+        'password' => ['required', 'confirmed', 'min:10'],
+    ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    $user = User::create([
+        'login' => $request->login,
+        'name' => $request->name,
+        'middlename' => $request->middlename,
+        'lastname' => $request->lastname,
+        'phone' => $request->phone,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'role' => 'user',
+    ]);
 
-        event(new Registered($user));
+    event(new Registered($user));
 
-        Auth::login($user);
+    Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
-    }
+    return redirect(route('dashboard', absolute: false));
+}
 }
