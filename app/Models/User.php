@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['login', 'name', 'middlename', 'lastname', 'email', 'phone', 'password', 'role'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -28,5 +28,23 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    
+    // Метод для проверки администратора
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+    
+    // Связь с бронированиями
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+    
+    // Полное ФИО
+    public function getFullNameAttribute()
+    {
+        return trim($this->lastname . ' ' . $this->name . ' ' . $this->middlename);
     }
 }

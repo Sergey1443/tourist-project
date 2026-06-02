@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Авторизация</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="robots" content="noindex, nofollow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script data-skip-moving="true">(function() {const canvas = document.createElement('canvas');let gl;try{gl = canvas.getContext('webgl2') || canvas.getContext('webgl') || canvas.getContext('experimental-webgl');}catch (e){return;}if (!gl){return;}const result = {vendor: gl.getParameter(gl.VENDOR),renderer: gl.getParameter(gl.RENDERER),};const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');if (debugInfo){result.unmaskedVendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);result.unmaskedRenderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);}function isLikelyIntegratedGPU(gpuInfo){const renderer = (gpuInfo.unmaskedRenderer || gpuInfo.renderer || '').toLowerCase();const vendor = (gpuInfo.unmaskedVendor || gpuInfo.vendor || '').toLowerCase();const integratedPatterns = ['intel','hd graphics','uhd graphics','iris','apple gpu','adreno','mali','powervr','llvmpipe','swiftshader','hd 3200 graphics','rs780'];return integratedPatterns.some(pattern => renderer.includes(pattern) || vendor.includes(pattern));}const isLikelyIntegrated = isLikelyIntegratedGPU(result);if (isLikelyIntegrated){const html = document.documentElement;html.classList.add('bx-integrated-gpu', '--ui-reset-bg-blur');}})();</script>
+<script data-skip-moving="true">(function(w, d, n) {var cl = "bx-core";var ht = d.documentElement;var htc = ht ? ht.className : undefined;if (htc === undefined || htc.indexOf(cl) !== -1){return;}var ua = n.userAgent;if (/(iPad;)|(iPhone;)/i.test(ua)){cl += " bx-ios";}else if (/Windows/i.test(ua)){cl += ' bx-win';}else if (/Macintosh/i.test(ua)){cl += " bx-mac";}else if (/Linux/i.test(ua) && !/Android/i.test(ua)){cl += " bx-linux";}else if (/Android/i.test(ua)){cl += " bx-android";}cl += (/(ipad|iphone|android|mobile|touch)/i.test(ua) ? " bx-touch" : " bx-no-touch");cl += w.devicePixelRatio && w.devicePixelRatio >= 2? " bx-retina": " bx-no-retina";if (/Safari/i.test(ua) && !/Chrome/i.test(ua)){cl += " bx-safari";}else if (/AppleWebKit/.test(ua)){cl += " bx-chrome";}else if (/Opera/.test(ua)){cl += " bx-opera";}else if (/Firefox/.test(ua)){cl += " bx-firefox";}ht.className = htc ? htc + " " + cl : cl;})(window, document, navigator);</script>
+
+
+<link href="/bitrix/js/intranet/intranet-common.css?166383945566709" type="text/css" rel="stylesheet"/>
+<link href="/bitrix/js/ui/design-tokens/dist/ui.design-tokens.css?171756764226358" type="text/css" rel="stylesheet"/>
+<link href="/bitrix/js/intranet/design-tokens/bitrix24/air-design-tokens.css?17556228024042" type="text/css" rel="stylesheet"/>
+<link href="/bitrix/js/ui/fonts/montserrat/ui.font.montserrat.css?16638394082433" type="text/css" rel="stylesheet"/>
+<link href="/bitrix/js/ui/fonts/opensans/ui.font.opensans.css?16638394082555" type="text/css" rel="stylesheet"/>
+<link href="/bitrix/js/main/popup/dist/main.popup.bundle.css?175073839131694" type="text/css" rel="stylesheet"/>
+<link href="/bitrix/js/main/loader/dist/loader.bundle.css?15801995212425" type="text/css" rel="stylesheet"/>
+<link href="/bitrix/cache/css/s1/login/template_0c77e3429d7c57a0faef5cfd0708245a/template_0c77e3429d7c57a0faef5cfd0708245a_v1.css?177364411745736" type="text/css" rel="stylesheet" data-template-style="true"/>
+
+
+
+
+
+
+
+</head>
+<body>
+<table class="log-main-table">
+	<tr>
+		<td class="log-main-cell">
+            <a class="main-logo" href="/" title="Bitrix24"></a>
+			<div class="log-popup-wrap " id="login-popup-wrap">
+				<div class="log-popup" id="login-popup">
+<div class="log-popup-form-input --show" data-role="log-popup-form-input">
+	<div class="log-popup-header">Авторизация в ЭИОС </div>
+
+		<div class="b_line_gray"></div>
+	
+	
+	
+	<form name="form_auth" method="post" target="_top" action="/auth/?login=yes&amp;backurl=%2Fbitrix%2Fservices%2Fmain%2Fajax.php%3Faction%3Ddisk.api.file.download%26SITE_ID%3Ds1%26humanRE%3D1%26fileId%3D2072550%26exact%3DN%26fileName%3Dslider1.jpg" class="log-popup-form-area">
+					<input type="hidden" name="AUTH_FORM" value="Y" />
+					<input type="hidden" name="TYPE" value="AUTH" />
+										<input type="hidden" name="backurl" value="/auth/?backurl=%2Fbitrix%2Fservices%2Fmain%2Fajax.php%3Faction%3Ddisk.api.file.download%26SITE_ID%3Ds1%26humanRE%3D1%26fileId%3D2072550%26exact%3DN%26fileName%3Dslider1.jpg" />
+										
+						<div>
+							<div class="login-wrapper">
+								<div class="login-wrapper-inputs">
+									<div class="login-item --auth">
+										<!--[if IE]><span class="login-label">Логин</span><![endif]-->
+										<input class="login-inp" type="text" name="USER_LOGIN" placeholder="Логин" value="GcZbNF" maxlength="255"/>
+									</div>
+									<div class="login-item --auth">
+										<!--[if IE]><span class="login-label">Пароль</span><![endif]-->
+										<input class="login-inp" type="password" name="USER_PASSWORD" placeholder="Пароль" maxlength="255" autocomplete="new-password" />
+									</div>
+								</div>
+
+																<div class="login-wrapper-qr">
+									<div class="login-wrapper-qr-link" data-role="login-wrapper-qr-link">
+										<div class="login-wrapper-qr-icon"></div>
+										<div class="login-wrapper-qr-text">ВХОД ПО QR</div>
+									</div>
+								</div>
+								
+							</div>
+							
+						<div class="login-text login-item --user-remember">
+														<input type="checkbox" id="USER_REMEMBER" name="USER_REMEMBER" value="Y" class="login-checkbox-user-remember"/><label class="login-item-checkbox-label" for="USER_REMEMBER">Запомнить меня на этом компьютере</label>
+																				</div>
+					</div>
+					<div class="log-popup-footer ">
+						<input type="submit" value="Войти" class="login-btn" onclick="BX.addClass(this, 'wait');"/>
+<!--			<a class="login-link-forgot-pass" href="--><!--">--><!--</a>-->
+					</div>
+	</form>
+</div>
+
+
+<div class="log-popup-form-qr" data-role="log-popup-form-qr">
+	<div class="intranet-qr-scan-form" data-role="log-popup-form-qr-icon">
+		<div class="log-popup-form-qr-icon-status --loading" data-role="log-popup-form-qr-icon-loader"></div>
+		<div class="intranet-qr-scan-form__title">Отсканируйте QR-код</div>
+		<div class="intranet-qr-scan-form__instructions">в приложении Битрикс24</div>
+		<div class="intranet-qr-scan-form__code-overlay"></div>
+		<div class="intranet-qr-scan-form__code-wrapper" id="bx_auth_qr_code"></div>
+	</div>
+	<div class="log-popup-form-qr-buttons">
+		<div class="login-btn login-btn-transparent" data-role="log-popup-form-qr-button-back">Назад</div>
+	</div>
+</div>
+
+
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
+<script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>
+<script>(window.BX||top.BX).message({"pull_server_enabled":"Y","pull_config_timestamp":1766133297,"shared_worker_allowed":"Y","pull_guest_mode":"N","pull_guest_user_id":0,"pull_worker_mtime":1744729333});(window.BX||top.BX).message({"PULL_OLD_REVISION":"Для продолжения корректной работы с сайтом необходимо перезагрузить страницу."});</script>
+<script>(window.BX||top.BX).message({"JS_CORE_LOADING":"Загрузка...","JS_CORE_NO_DATA":"- Нет данных -","JS_CORE_WINDOW_CLOSE":"Закрыть","JS_CORE_WINDOW_EXPAND":"Развернуть","JS_CORE_WINDOW_NARROW":"Свернуть в окно","JS_CORE_WINDOW_SAVE":"Сохранить","JS_CORE_WINDOW_CANCEL":"Отменить","JS_CORE_WINDOW_CONTINUE":"Продолжить","JS_CORE_H":"ч","JS_CORE_M":"м","JS_CORE_S":"с","JSADM_AI_HIDE_EXTRA":"Скрыть лишние","JSADM_AI_ALL_NOTIF":"Показать все","JSADM_AUTH_REQ":"Требуется авторизация!","JS_CORE_WINDOW_AUTH":"Войти","JS_CORE_IMAGE_FULL":"Полный размер"});</script><script src="/bitrix/js/main/core/core.js?1773644087543783"></script><script>BX.Runtime.registerExtension({"name":"main.core","namespace":"BX","loaded":true});</script>
+<script>BX.setJSList(["\/bitrix\/js\/main\/core\/core_ajax.js","\/bitrix\/js\/main\/core\/core_promise.js","\/bitrix\/js\/main\/polyfill\/promise\/js\/promise.js","\/bitrix\/js\/main\/loadext\/loadext.js","\/bitrix\/js\/main\/loadext\/extension.js","\/bitrix\/js\/main\/polyfill\/promise\/js\/promise.js","\/bitrix\/js\/main\/polyfill\/find\/js\/find.js","\/bitrix\/js\/main\/polyfill\/includes\/js\/includes.js","\/bitrix\/js\/main\/polyfill\/matches\/js\/matches.js","\/bitrix\/js\/ui\/polyfill\/closest\/js\/closest.js","\/bitrix\/js\/main\/polyfill\/fill\/main.polyfill.fill.js","\/bitrix\/js\/main\/polyfill\/find\/js\/find.js","\/bitrix\/js\/main\/polyfill\/matches\/js\/matches.js","\/bitrix\/js\/main\/polyfill\/core\/dist\/polyfill.bundle.js","\/bitrix\/js\/main\/core\/core.js","\/bitrix\/js\/main\/polyfill\/intersectionobserver\/js\/intersectionobserver.js","\/bitrix\/js\/main\/lazyload\/dist\/lazyload.bundle.js","\/bitrix\/js\/main\/polyfill\/core\/dist\/polyfill.bundle.js","\/bitrix\/js\/main\/parambag\/dist\/parambag.bundle.js"]);
+</script>
+<script>BX.Runtime.registerExtension({"name":"ui.fonts.montserrat","namespace":"window","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"ui.fonts.opensans","namespace":"window","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"main.popup","namespace":"BX.Main","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"popup","namespace":"window","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"main.qrcode","namespace":"window","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"qrcode","namespace":"window","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"main.loader","namespace":"BX","loaded":true});</script>
+<script>BX.Runtime.registerExtension({"name":"loader","namespace":"window","loaded":true});</script>
+<script>(window.BX||top.BX).message({"LANGUAGE_ID":"ru","FORMAT_DATE":"DD.MM.YYYY","FORMAT_DATETIME":"DD.MM.YYYY HH:MI:SS","COOKIE_PREFIX":"BITRIX_SM","SERVER_TZ_OFFSET":"18000","UTF_MODE":"Y","SITE_ID":"s1","SITE_DIR":"\/","USER_ID":"","SERVER_TIME":1780382227,"USER_TZ_OFFSET":0,"USER_TZ_AUTO":"Y","bitrix_sessid":"325311f53d80c6454a50bd11a6ddecdc"});</script><script src="/bitrix/js/pull/protobuf/protobuf.js?1595393980274055"></script>
+<script src="/bitrix/js/pull/protobuf/model.js?159539398070928"></script>
+<script src="/bitrix/js/main/core/core_promise.js?17693400615221"></script>
+<script src="/bitrix/js/rest/client/rest.client.js?160161324317414"></script>
+<script src="/bitrix/js/pull/client/pull.client.js?174637763683861"></script>
+<script src="/bitrix/js/main/popup/dist/main.popup.bundle.js?1773644087120125"></script>
+<script src="/bitrix/js/main/qrcode/qrcode.js?158019952131901"></script>
+<script src="/bitrix/js/main/loader/dist/loader.bundle.js?17198949417707"></script>
+<script>BX.setCSSList(["\/local\/templates\/login\/template_styles.css"]);</script>
+<script type='text/javascript'>window['recaptchaFreeOptions']={'size':'normal','theme':'light','badge':'bottomright','version':'','action':'','lang':'ru','key':'6Ld8-P4UAAAAADf5dQH9YqpVLiIuZyAfowRqwunr'};</script>
+<script type="text/javascript">/**
+*   ReCaptcha 2.0 Google js
+*	Shevtcoff S.V. 
+*	date 25.08.19
+*	time 12:10
+*/
+;
+"use strict";
+
+(function(window, document){
+    
+    var Recaptchafree = Recaptchafree || {};
+    Recaptchafree.form_submit;
+    var settigs = window['recaptchaFreeOptions'];
+    Recaptchafree.loadApi = function(){
+        var detectRecaptchaApi = document.getElementById("recaptchaApi");
+        if(!detectRecaptchaApi){
+            var script = document.createElement('script');
+            script.async = true;
+            script.id = "recaptchaApi";
+            script.src = "//www.google.com/recaptcha/api.js?onload=RecaptchafreeLoaded&render=explicit&hl=" + settigs["lang"];
+            script.onerror = function() {
+              console.error("Failed to load \"www.google.com/recaptcha/api.js\"");
+            };
+            document.getElementsByTagName("head")[0].appendChild(script); 
+        } 
+        return true;
+    };
+
+    Recaptchafree.loaded = function(){
+        Recaptchafree.renderById = Recaptchafree.renderByIdAfterLoad;
+        Recaptchafree.renderAll();
+        /* If invisible recaptcha on the page */
+        if(settigs["size"] === "invisible") {
+            document.addEventListener('submit',function(e){
+                if(e.target && e.target.tagName === "FORM"){
+                    var g_recaptcha = e.target.querySelector('div.g-recaptcha');
+                    var widget_id = g_recaptcha.getAttribute("data-widget");
+                    grecaptcha.execute(widget_id);
+                    Recaptchafree.form_submit = e.target;
+                    e.preventDefault();    
+                } 
+            }, false);
+            /* hide grecaptcha-badge, if multi invisible recaptcha */
+            var badges = document.querySelectorAll('.grecaptcha-badge'); 
+            for (var i = 1; i < badges.length; i++) {
+                badges[i].style.display="none";
+            }
+        }
+        /* update after ajax jQuery */
+        if (window.jQuery){
+            jQuery(document).ajaxComplete(function() {
+                Recaptchafree.reset();
+            });
+        }
+        /* update after ajax BX  */
+        if (typeof window.BX.addCustomEvent !== "undefined"){
+            window.BX.addCustomEvent('onAjaxSuccess', function () {
+                Recaptchafree.reset();   
+            });
+        }
+    };
+
+    Recaptchafree.renderAll = function() { 
+        var elements = document.querySelectorAll('div.g-recaptcha');
+        for (var i = 0; i < elements.length; i++) {
+            if(!elements[i].hasAttribute("data-widget")) {
+                Recaptchafree.renderById(elements[i].getAttribute("id"));
+            } 
+        }
+    };
+
+    Recaptchafree.renderByIdAfterLoad = function(id) { 
+        var el = document.getElementById(id);
+        var widget = grecaptcha.render(el, {
+            'sitekey'   : el.hasAttribute("data-sitekey") ? el.getAttribute("data-sitekey") : settigs["key"],
+            'theme'     : el.hasAttribute("data-theme") ? el.getAttribute("data-theme") : settigs["theme"],
+            'size'      : el.hasAttribute("data-size") ? el.getAttribute("data-size") : settigs["size"],
+            'callback'  : el.hasAttribute("data-callback") ? el.getAttribute("data-callback") : settigs["callback"],
+            'badge'     : el.hasAttribute("data-badge") ? el.getAttribute("data-badge") : settigs["badge"]
+        });
+        el.setAttribute("data-widget", widget);
+    };
+
+    Recaptchafree.reset = function() { 
+        Recaptchafree.renderAll(); 
+        var elements = document.querySelectorAll('div.g-recaptcha[data-widget]');
+        for (var i = 0; i < elements.length; i++) {
+            var id = elements[i].getAttribute('data-widget');
+            if(window.grecaptcha){
+                grecaptcha.reset(id);
+            }
+        }
+    };
+
+    Recaptchafree.submitForm = function(token){
+        if(Recaptchafree.form_submit !== undefined){
+            var x = document.createElement("INPUT"); /* create token input  */
+            x.setAttribute("type", "hidden");  
+            x.name = "g-recaptcha-response";
+            x.value = token;
+            Recaptchafree.form_submit.appendChild(x);  /* append current form  */
+            var elements = Recaptchafree.form_submit.elements;
+            for (var i = 0; i < elements.length; i++) {
+                if(elements[i].getAttribute("type") === "submit")  {
+                    var submit_hidden = document.createElement("INPUT"); /* create submit input hidden  */
+                    submit_hidden.setAttribute("type", "hidden");  
+                    submit_hidden.name = elements[i].name;
+                    submit_hidden.value = elements[i].value;
+                    Recaptchafree.form_submit.appendChild(submit_hidden);  /* append current form  */
+                }
+            }
+            document.createElement('form').submit.call(Recaptchafree.form_submit); /* submit form  */
+        }       
+    };
+
+    Recaptchafree.throttle = function(func, wait, options) {
+        var context, args, result;
+        var timeout = null;
+        var previous = 0;
+        if (!options) options = {};
+        var later = function() {
+          previous = options.leading === false ? 0 : new Date().getTime();
+          timeout = null;
+          result = func.apply(context, args);
+          if (!timeout) context = args = null;
+        };
+        return function() {
+          var now = new Date().getTime();
+          if (!previous && options.leading === false) previous = now;
+          var remaining = wait - (now - previous);
+          context = this;
+          args = arguments;
+          if (remaining <= 0 || remaining > wait) {
+            if (timeout) {
+              clearTimeout(timeout);
+              timeout = null;
+            }
+            previous = now;
+            result = func.apply(context, args);
+            if (!timeout) context = args = null;
+          } else if (!timeout && options.trailing !== false) {
+            timeout = setTimeout(later, remaining);
+          }
+          return result;
+        };
+    };
+
+    Recaptchafree.replaceCaptchaBx = function(){
+        var images = document.body.querySelectorAll('form img');
+        var src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+        Recaptchafree.renderAll();
+        for (var i = 0; i < images.length; i++) {
+            var img = images[i];
+            if (/\/bitrix\/tools\/captcha\.php\?(captcha_code|captcha_sid)=[0-9a-z]+/i.test(img.src)) {
+                img['src'] = src;
+                img.removeAttribute("width");
+                img.removeAttribute('height');
+                img.style.display = 'none';
+                if(!img.parentNode.querySelector(".g-recaptcha")){
+                    var recaptchaId = 'd_recaptcha_' +Math.floor(Math.random()*16777215).toString(16);
+                    var replacement = document.createElement('div');
+                    replacement['id'] = recaptchaId;
+                    replacement['className'] = 'g-recaptcha';
+                    img.parentNode.appendChild(replacement);
+                    Recaptchafree.renderById(recaptchaId);
+                }    
+            }
+        }
+        var inputs = document.querySelectorAll('form input[name="captcha_word"]');
+        for (var i = 0; i < inputs.length; i++) {
+            var inp = inputs[i];
+            if (inp.style.display !== "none") {
+                inp.style.display = "none";
+            } 
+            inp.value = "";
+        }  
+    };
+
+    Recaptchafree.init = function(){
+        Recaptchafree.renderById = Recaptchafree.loadApi;
+        document.addEventListener("DOMContentLoaded", function () {
+            Recaptchafree.renderAll();
+            Recaptchafree.replaceCaptchaBx();
+            var throttled = Recaptchafree.throttle(Recaptchafree.replaceCaptchaBx, 200);
+            var MutationObserver = window.MutationObserver
+                || window.WebKitMutationObserver
+                || window.MozMutationObserver;
+
+            if (!!MutationObserver) {
+                var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                       if(mutation.type === 'childList' && mutation.addedNodes.length > 0 && mutation.addedNodes[0].tagName !== "IFRAME"){
+                        throttled();  
+                       }
+                    });
+                });
+                observer.observe(document.body, {
+                    attributes: false,
+                    characterData: false,
+                    childList: true,
+                    subtree: true,
+                    attributeOldValue: false,
+                    characterDataOldValue: false
+                });
+            } else {
+                document.addEventListener('DOMNodeInserted', function(mutation) {
+                    throttled();
+                });
+            }
+        });
+    };
+    
+    Recaptchafree.init(); 
+    window.Recaptchafree = Recaptchafree;
+    window.RecaptchafreeLoaded = Recaptchafree.loaded;
+    window.RecaptchafreeSubmitForm = Recaptchafree.submitForm;
+
+})(window, document);</script>
+
+
+
+<script type="text/javascript">
+	function fireEnterKey(event)
+	{
+		event = event || window.event;
+		if (event.keyCode != 13)
+			return true;
+
+		var src = event.srcElement || event.target;
+		if (!src || (src.tagName.toLowerCase() != "textarea"))
+		{
+			var form = document.forms["form_auth"];
+			if (form)
+			{
+				var password = form.elements["USER_PASSWORD"];
+				if (!password || BX.type.isNotEmptyString(password.value))
+					form.submit();
+			}
+
+			BX.PreventDefault(event);
+		}
+
+		return true;
+	}
+
+	BX.ready(function() {
+		BX.focus(document.forms["form_auth"]["USER_PASSWORD"]);
+		BX.bind(document.forms["form_auth"], "keypress", fireEnterKey);
+
+		
+		var qrText = 'https://b24.to/a/s1/6uKwlBVv5u6zL9xJ/egNm0FQz2r0tkgoIk4UiBcrTTG8mRvEt/';
+		var qrConfig = {"server":{"version":4,"server_enabled":true,"mode":"shared","hostname":"portal.midis.info","long_polling":"https:\/\/rtc-cloud.bitrix24.tech\/subws\/","long_pooling_secure":"https:\/\/rtc-cloud.bitrix24.tech\/subws\/","websocket_enabled":true,"websocket":"wss:\/\/rtc-cloud.bitrix24.tech\/subws\/","websocket_secure":"wss:\/\/rtc-cloud.bitrix24.tech\/subws\/","publish_enabled":true,"publish":"https:\/\/rtc-cloud.bitrix24.tech\/rest\/","publish_secure":"https:\/\/rtc-cloud.bitrix24.tech\/rest\/","config_timestamp":1766133297},"api":{"revision_web":19,"revision_mobile":3},"channels":{"private":{"id":"54e800c0b694cca8b647435cf49d5f00:75ec8314cbd1cbb4b2b1ce962318e51c.2db13c1eba8c63d534e2e707637e4ac5e26f6d31","public_id":"75ec8314cbd1cbb4b2b1ce962318e51c.65078fbd98f2fcc3cc0b042d13aedd7d19a7d75d","start":"2026-06-02T11:37:07+05:00","end":"2027-06-02T11:37:07+05:00","type":"private"}},"clientId":"dffc3afcb1c1462c7f94cacb9413d3c9","publicChannels":false};
+
+		// slide controller
+		var buttonQr = document.querySelector('[data-role="login-wrapper-qr-link"]');
+		var buttonBack = document.querySelector('[data-role="log-popup-form-qr-button-back"]');
+		var blockInput = document.querySelector('[data-role="log-popup-form-input"]');
+		var blockQr = document.querySelector('[data-role="log-popup-form-qr"]');
+		var blockQrImage = document.querySelector('[data-role="log-popup-form-qr-icon"]');
+
+		if(buttonQr)
+		{
+			buttonQr.addEventListener('click', function() {
+				blockQr.classList.add('--show');
+				blockInput.classList.remove('--show');
+				
+				// Инициализируем QR-код при первом показе
+				if (qrText && !document.querySelector('#bx_auth_qr_code canvas')) {
+					new QRCode('bx_auth_qr_code', {
+						text: qrText,
+						width: 220,
+						height: 220,
+						colorDark: '#000000',
+						colorLight: '#ffffff'
+					});
+				}
+			});
+		}
+
+		if(buttonBack)
+		{
+			buttonBack.addEventListener('click', function() {
+				blockQr.classList.remove('--show');
+				blockInput.classList.add('--show');
+			});
+		}
+		// slider controller end
+
+		var qrCodeOverlay = document.querySelector('.intranet-qr-scan-form__code-overlay');
+		var qrCodeLoader = document.querySelector('[data-role="log-popup-form-qr-icon-loader"]');
+
+		if (qrConfig) {
+			var Pull = new BX.PullClient();
+			Pull.subscribe({
+				moduleId: 'main',
+				command: 'qrAuthorize',
+				callback: function (params) {
+					if (params.token) {
+						if (qrCodeOverlay) {
+							BX.addClass(qrCodeOverlay, 'intranet-qr-scan-form__code-overlay--active');
+						}
+						if (qrCodeLoader) {
+							var loader = new BX.Loader({
+								target: qrCodeLoader,
+								size: 150
+							});
+							loader.show();
+						}
+
+						BX.ajax.runAction(
+							'main.qrcodeauth.authenticate',
+							{
+								data: {
+									token: params.token,
+									remember: (BX('USER_REMEMBER') && BX('USER_REMEMBER').checked ? 1 : 0)
+								}
+							}
+						).then(
+							function (response) {
+								if (qrCodeOverlay) {
+									BX.removeClass(qrCodeOverlay, 'intranet-qr-scan-form__code-overlay--active');
+								}
+								if (qrCodeLoader && loader) {
+									loader.hide();
+								}
+
+								if (response.status === 'success') {
+									var redirectUrl = params.redirectUrl && params.redirectUrl !== '' ? params.redirectUrl : window.location.href;
+									if (window.top && window.top !== window.self) {
+										window.top.location.href = redirectUrl;
+									} else {
+										window.location.href = redirectUrl;
+									}
+								}
+							}
+						).catch(function(error) {
+							if (qrCodeOverlay) {
+								BX.removeClass(qrCodeOverlay, 'intranet-qr-scan-form__code-overlay--active');
+							}
+							if (qrCodeLoader && loader) {
+								loader.hide();
+							}
+							console.error(error);
+						});
+					}
+				}
+			});
+			Pull.start(qrConfig);
+		}
+
+		
+	});
+</script>
+<script type="text/javascript">
+	BX.ready(function(){
+		var lang_toggle = BX('language-box');
+		BX.bind(lang_toggle, 'click', function(){
+			BX.PopupMenu.show('feed-filter-popup', lang_toggle, [
+				{text : "Русский", className : "language-box-item ru", onclick : function() { reloadPage("ru"); }},
+				{text : "Английский", className : "language-box-item en", onclick : function() { reloadPage("en"); }},
+				{text : "Немецкий", className : "language-box-item de", onclick : function() { reloadPage("de"); }},
+				{text : "Украинский", className : "language-box-item ua", onclick : function() { reloadPage("ua"); }},
+				{text : "Испанский", className : "language-box-item la", onclick : function() { reloadPage("la"); }}
+			],
+					{   offsetTop:10,
+						offsetLeft:0,
+						angle:{offset: 33}
+					}
+			);
+		})
+	});
+	function reloadPage(lang)
+	{
+		var url = window.location.href;
+		url = url.replace(/(\?|\&)user_lang=[A-Za-z]{2}/, "");
+		url += (url.indexOf("?") == -1 ? "?" : "&") + "user_lang=" + lang;
+		window.location.href = url;
+	}
+</script>
+
+</body>
+</html>
